@@ -20,4 +20,4 @@ no_index:
 requires:
   Env::C: 0
   Tkx::TclTk::Bind: 0
-version: v1.0.00
+version: v1.0.01

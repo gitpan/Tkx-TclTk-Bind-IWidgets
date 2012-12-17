@@ -4,8 +4,6 @@ use Tkx::TclTk::Bind::IWidgets;
 
 use strict;
 
-Tkx::package_require('Iwidgets');
-
 my $mw = Tkx::widget->new(q{.});
 $mw->Tkx::wm_title('Test');
 $mw->Tkx::wm_minsize( 810, 560 );

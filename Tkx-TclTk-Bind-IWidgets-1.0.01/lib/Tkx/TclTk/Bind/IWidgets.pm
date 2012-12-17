@@ -7,7 +7,7 @@ package Tkx::TclTk::Bind::IWidgets;
 # # Standards  : Perl-Best-Practices                       severity 1 (brutal) #
 # # -------------------------------------------------------------------------- #
 # # Autoren    : Jürgen von Brietzke                                   JvBSoft #
-# # Version    : 1.0.00                                            17.Dez.2012 #
+# # Version    : 1.0.01                                            17.Dez.2012 #
 # # -------------------------------------------------------------------------- #
 # # Aufgabe    : Bindet die TclTk 'iwidgets4.0.2' Bibliothek an Perl::Tkx      #
 # #              ------------------------------------------------------------- #
@@ -33,7 +33,7 @@ package Tkx::TclTk::Bind::IWidgets;
 use strict;
 use warnings;
 
-our $VERSION = q{1.0.00};
+our $VERSION = q{1.0.01};
 
 use Env::C;
 use Tkx::TclTk::Bind qw{ &load_library };
@@ -56,6 +56,7 @@ sub BEGIN {
    Tkx::lappend( '::auto_path', $path_to_itk_library );
    Tkx::lappend( '::auto_path', $path_to_itcl_library );
    Tkx::lappend( '::auto_path', $path_to_iwidgets_library );
+   Tkx::package_require('Iwidgets');
 
 } # end of sub BEGIN
 
@@ -70,18 +71,37 @@ __END__
 
 =head1 NAME
 
-Tkx::TclTk::Bind::IWidgets - Load and binding for 'IWidgets' (4.0.2)
+Tkx::TclTk::Bind::IWidgets - Bind the Tcl/Tk B<'iwidgets4.0.2'>-library to Tkx.
 
 =head1 VERSION
 
-This is version 1.0.00
+This is version 1.0.01
 
 =head1 SYNOPSIS
 
    use Tkx::TclTk::Bind::IWidgets;
    ...
-   Tkx::package_require('Iwidgets');
+   $mw = Tkx::widget->new(q{.});
+   $mw->Tkx::wm_title('Test');
    ...
+   my $ca = $mw->new_iwidgets__Calendar();
+   ...
+   Tkx::grid( $ca, -column => 0, -row => 0 );
+   ...
+   Tkx::MainLoop();
+
+
+=head1 DESCRIPTION
+
+This modul load the B<iwidgets4.0.2>-library in the 'User-TEMP-Directory' and
+binding the library on B<Tkx>. The modul ship the iwidget library as TAR-Ball
+for the OS-System B<MSWin32>, B<Linux> and B<Mac OS X>.
+
+This modul provide support for 'ActiveState PerlApp'. You can import library as
+TAR-Ball from directory B<.../lib/Tkx/TclTk/Bind/TAR/...> over 'Bound files' in
+PerlApp.
+
+When program will ending, the modul delete all files from 'User-TEMP'-Directory.
 
 =head1 PRAGMAS
 
