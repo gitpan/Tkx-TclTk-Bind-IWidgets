@@ -1,0 +1,12 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/Tkx-TclTk-Bind-IWidgets.t
+lib/Tkx/TclTk/Bind/IWidgets.pm
+lib/Tkx/TclTk/Bind/TAR/iwidgets.darwin.tar
+lib/Tkx/TclTk/Bind/TAR/iwidgets.linux.tar
+lib/Tkx/TclTk/Bind/TAR/iwidgets.mswin.tar
+example/test.pl
+META.yml                                 Module YAML meta-data (added by MakeMaker)
+META.json                                Module JSON meta-data (added by MakeMaker)
