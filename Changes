@@ -1,0 +1,15 @@
+Revision history for Perl extension Tkx::TclTk::Bind::IWidgets.
+
+1.0.00  Mo. 17.Dez.2012 14:31:24
+	- original version; created by h2xs 1.23 with options
+		-XA -n Tkx::TclTk::Bind::IWidgets
+
+1.0.01  Mo. 17.Dez.2012 17 21:11:00
+   - POD - Documentation verbessert
+	- Tkx::package_require('Iwidgets'); in Modul übvernommen
+
+1.2.00  Sa. 15.Jun.2013 21:30:00
+   - Anbindung für Löschung überarbeitet
+
+1.2.01  So. 16.Jun.2013 21:30:00
+   - Weitere Beispiel-Programme

@@ -1,4 +1,4 @@
-Tkx-TclTk-Bind-IWidgets version 1.0.00
+Tkx-TclTk-Bind-IWidgets version 1.2.01
 ======================================
 
 The README is used to introduce the module and provide instructions on
@@ -31,7 +31,7 @@ COPYRIGHT AND LICENCE
 
 Put the correct copyright and licence information here.
 
-Copyright (C) 2012 by Jürgen von Brietzke
+Copyright (C) 2012, 2013 by Jürgen von Brietzke
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.12.4 or,

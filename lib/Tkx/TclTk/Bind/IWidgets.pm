@@ -7,17 +7,9 @@ package Tkx::TclTk::Bind::IWidgets;
 # # Standards  : Perl-Best-Practices                       severity 1 (brutal) #
 # # -------------------------------------------------------------------------- #
 # # Autoren    : Jürgen von Brietzke                                   JvBSoft #
-# # Version    : 1.0.01                                            17.Dez.2012 #
+# # Version    : 1.2.00                                            15.Jun.2013 #
 # # -------------------------------------------------------------------------- #
 # # Aufgabe    : Bindet die TclTk 'iwidgets4.0.2' Bibliothek an Perl::Tkx      #
-# #              ------------------------------------------------------------- #
-# #              Erstellen der Image-Bibliothek:                               #
-# #              a) Download ActiveTcl 8.4.19.6 und installieren               #
-# #              b) Erzeugen des TAR-Balls 'iwidgets.tar' mit folgenden Inhalt #
-# #                 1) Verzeichnis 'itk3.4'                                    #
-# #                 2) Verzeichnis 'itcl3.4'                                   #
-# #                 3) Verzeichnis 'iwidgets4.0.2'                             #
-# #              c) TAR-Ball unter '.../lib/Tkx/TclTk/Bind/TAR installieren    #
 # # -------------------------------------------------------------------------- #
 # # Pragmas    : strict, warnings                                              #
 # # -------------------------------------------------------------------------- #
@@ -33,14 +25,14 @@ package Tkx::TclTk::Bind::IWidgets;
 use strict;
 use warnings;
 
-our $VERSION = q{1.0.01};
+our $VERSION = q{1.2.00};
 
 use Env::C;
 use Tkx::TclTk::Bind qw{ &load_library };
 
 sub BEGIN {
 
-   my $temp_dir = load_library('iwidgets');
+   my $temp_dir = load_library( 'iwidgets', 'iwidgets4.0.2' );
 
    # --- Steuervariablen belegen -----------------------------------------------
    my $path_to_iwidgets_library
@@ -60,6 +52,13 @@ sub BEGIN {
 
 } # end of sub BEGIN
 
+sub END {
+
+   Env::C::unsetenv('ITCL_LIBRARY');
+   Env::C::unsetenv('ITK_LIBRARY');
+
+} # end of sub END
+
 # ##############################################################################
 # #                                   E N D                                    #
 # ##############################################################################
@@ -75,7 +74,7 @@ Tkx::TclTk::Bind::IWidgets - Bind the Tcl/Tk B<'iwidgets4.0.2'>-library to Tkx.
 
 =head1 VERSION
 
-This is version 1.0.01
+This is version 1.2.00
 
 =head1 SYNOPSIS
 
@@ -95,7 +94,7 @@ This is version 1.0.01
 
 This modul load the B<iwidgets4.0.2>-library in the 'User-TEMP-Directory' and
 binding the library on B<Tkx>. The modul ship the iwidget library as TAR-Ball
-for the OS-System B<MSWin32>, B<Linux> and B<Mac OS X>.
+for the OS-System B<MSWin32>, B<Linux> (32 and 64-bit) and B<Mac OS X>.
 
 This modul provide support for 'ActiveState PerlApp'. You can import library as
 TAR-Ball from directory B<.../lib/Tkx/TclTk/Bind/TAR/...> over 'Bound files' in
